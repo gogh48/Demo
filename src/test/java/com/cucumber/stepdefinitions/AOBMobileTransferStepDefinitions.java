@@ -32,7 +32,7 @@ public class AOBMobileTransferStepDefinitions {
 
     @Before
     public void beforeScenario(Scenario scenario) throws IOException, GeneralLeanFtException, ReportException {
-        //the following will start a new test node in the report
+        //the following will start a new test node in the report ..
         try {
             ModifiableSDKConfiguration config = new ModifiableSDKConfiguration();
             config.setServerAddress(new URI("ws://localhost:5095"));
@@ -42,6 +42,7 @@ public class AOBMobileTransferStepDefinitions {
         catch (Exception e) {
             }
 
+        //connect to device
         myDevice = MobileLab.lockDeviceById("656e674a");
         aobAndroidModel = new AOBAndroid(myDevice);
         aobAndroidModel.AdvantageApplication().restart();
